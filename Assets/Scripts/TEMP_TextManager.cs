@@ -6,16 +6,19 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public class TEMP_TextManager : MonoBehaviour{
-	public InputActionReference newInput;
-
-	private float SpacebarInput;
-	private string CurrentSceneName;
-	private string NextSceneName;
 	static private TextMeshProUGUI UIText;
+
+	/* Input Management */
+	public InputActionReference newInput;
+	private float SpacebarInput;
+
+	/* Scene Management */
 	static private Dictionary<string, string> sceneDestination;
+	private string CurrentSceneName = "";
+	private string NextSceneName = "";
 
 	void Awake(){
-		sceneDestination = new Dictionary<string ,string>(){
+		sceneDestination = new Dictionary<string ,string>(){ /* Origin Scene -> Destination Scene */
 			{"kurt_scene", "kurt_scene_2"},
 			{"kurt_scene_2", "kurt_scene"},
 		};
@@ -23,26 +26,18 @@ public class TEMP_TextManager : MonoBehaviour{
 
 	void Start(){
 		UIText = GetComponent<TextMeshProUGUI>();
-		CurrentSceneName = "";
-		NextSceneName = "";
 	}
 
 	void Update(){
+		UIText.text = "Press Spacebar To Change Scene";
+
+		/* Get Current and Next Scene */
 		CurrentSceneName = SceneManager.GetActiveScene().name;
 		NextSceneName = sceneDestination[CurrentSceneName];
-		/*
-		if (CurrentSceneName == "kurt_scene"){
-			NextSceneName = "kurt_scene_2";
-		}
-		if (CurrentSceneName == "kurt_scene_2") {
-			NextSceneName = "kurt_scene";
-		}
-		*/
 
+		/* Read Spacebar Input */
 		SpacebarInput = newInput.action.ReadValue<float>();
-		UIText.text = "Press Spacebar To Change Scene";
 		if (SpacebarInput != 0){
-			//UIText.text = "Spacebar Pressed!";
 			SceneManager.LoadScene(NextSceneName);
 		}
 	}
