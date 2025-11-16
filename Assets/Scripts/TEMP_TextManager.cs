@@ -12,36 +12,38 @@ public class TEMP_TextManager : MonoBehaviour{
 	private string CurrentSceneName;
 	private string NextSceneName;
 	static private TextMeshProUGUI UIText;
+	static private Dictionary<string, string> sceneDestination;
+
+	void Awake(){
+		sceneDestination = new Dictionary<string ,string>(){
+			{"kurt_scene", "kurt_scene_2"},
+			{"kurt_scene_2", "kurt_scene"},
+		};
+	}
 
 	void Start(){
 		UIText = GetComponent<TextMeshProUGUI>();
 		CurrentSceneName = "";
 		NextSceneName = "";
-
-		Debug.Log("Start");
-		Debug.Log(UIText.GetInstanceID());
 	}
 
 	void Update(){
 		CurrentSceneName = SceneManager.GetActiveScene().name;
-		NextSceneName = "";
+		NextSceneName = sceneDestination[CurrentSceneName];
+		/*
 		if (CurrentSceneName == "kurt_scene"){
 			NextSceneName = "kurt_scene_2";
 		}
 		if (CurrentSceneName == "kurt_scene_2") {
 			NextSceneName = "kurt_scene";
 		}
+		*/
 
 		SpacebarInput = newInput.action.ReadValue<float>();
 		UIText.text = "Press Spacebar To Change Scene";
 		if (SpacebarInput != 0){
-			UIText.text = "Spacebar Pressed!";
+			//UIText.text = "Spacebar Pressed!";
 			SceneManager.LoadScene(NextSceneName);
 		}
-	}
-
-	void FixedUpdate(){
-		//Debug.Log("Cur:" + CurrentSceneName);
-		//Debug.Log("Next:"+NextSceneName);
 	}
 }
