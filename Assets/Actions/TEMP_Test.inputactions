@@ -22,7 +22,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "Scale",
-                    "groups": "",
+                    "groups": "keyboard",
                     "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
