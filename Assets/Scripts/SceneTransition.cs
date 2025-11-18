@@ -12,6 +12,7 @@ public class SceneTransition : MonoBehaviour
     private bool fadeIn = false;
     private bool fadeOut = false;
 
+    // The Instance Of The SceneTransition Object
     public SceneTransition instance;
 
     // Make Sure Scene Transition Game Object Doesn't Get Destroyed
@@ -29,16 +30,16 @@ public class SceneTransition : MonoBehaviour
     }
 
     // Testing
-    void Start()
-    {
-        StartCoroutine(Testing());
-    }
-    IEnumerator Testing()
-    {
-        SceneTransitionTo("kurt_scene");
-        yield return new WaitForSeconds(5);
-        SceneTransitionTo("kurt_scene_2");
-    }
+    //void Start()
+    //{
+    //    StartCoroutine(Testing());
+    //}
+    //IEnumerator Testing()
+    //{
+    //    SceneTransitionTo("kurt_scene");
+    //    yield return new WaitForSeconds(5);
+    //    SceneTransitionTo("kurt_scene_2");
+    //}
 
     void Update()
     {
@@ -54,7 +55,6 @@ public class SceneTransition : MonoBehaviour
     {
         StartCoroutine(LoadLevel(sceneName));
     }
-
     IEnumerator LoadLevel(string sceneName)
     {
         fadeOut = true;
