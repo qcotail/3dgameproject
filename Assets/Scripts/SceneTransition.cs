@@ -7,32 +7,35 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] Animator transitionAnim;
 
+    //Scene PreviousScene;
+
     // CrossFade Variables For Animations
     private string currentState = "Default";
     private bool fadeIn = false;
     private bool fadeOut = false;
 
     // The Instance Of The SceneTransition Object
-    public SceneTransition instance;
+    //public SceneTransition instance;
 
     // Make Sure Scene Transition Game Object Doesn't Get Destroyed
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     // Testing
     //void Start()
     //{
-    //    StartCoroutine(Testing());
+        //StartCoroutine(Testing());
+        //SceneTransitionTo("LevelTemplateTest");
     //}
     //IEnumerator Testing()
     //{
@@ -60,7 +63,7 @@ public class SceneTransition : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(1);
         fadeIn = true;
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         yield return new WaitForSeconds(1);
 
         fadeIn = false;

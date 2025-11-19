@@ -48,7 +48,8 @@ public class TEMP_TextManager : MonoBehaviour{
         SpacebarInput = Input.GetKeyDown(KeyCode.Space);
         if (SpacebarInput)
         {
-            SceneManager.LoadScene(NextSceneName);
+			//SceneManager.LoadScene(NextSceneName);
+			SceneManager.LoadScene("LevelTemplateTest");
         }
     }
 }
