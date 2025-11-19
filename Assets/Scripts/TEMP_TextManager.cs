@@ -9,8 +9,11 @@ public class TEMP_TextManager : MonoBehaviour{
 	static private TextMeshProUGUI UIText;
 
 	/* Input Management */
-	public InputActionReference newInput;
-	private float SpacebarInput;
+	//public InputActionReference newInput;
+    //private float SpacebarInput;
+
+    // Miguel Was Here
+    private bool SpacebarInput;
 
 	/* Scene Management */
 	static private Dictionary<string, string> sceneDestination;
@@ -35,10 +38,17 @@ public class TEMP_TextManager : MonoBehaviour{
 		CurrentSceneName = SceneManager.GetActiveScene().name;
 		NextSceneName = sceneDestination[CurrentSceneName];
 
-		/* Read Spacebar Input */
-		SpacebarInput = newInput.action.ReadValue<float>();
-		if (SpacebarInput != 0){
-			SceneManager.LoadScene(NextSceneName);
-		}
-	}
+		//SpacebarInput = newInput.action.ReadValue<float>();
+        //      if (SpacebarInput != 0)
+        //{
+        //          SceneManager.LoadScene(NextSceneName);
+        //      }
+		
+		// Miguel Was Here
+        SpacebarInput = Input.GetKeyDown(KeyCode.Space);
+        if (SpacebarInput)
+        {
+            SceneManager.LoadScene(NextSceneName);
+        }
+    }
 }
