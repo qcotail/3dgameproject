@@ -63,6 +63,7 @@ public class SceneTransition : MonoBehaviour
         fadeOut = true;
         yield return new WaitForSeconds(1);
         fadeIn = true;
+        //SceneManager.LoadSceneAsync(sceneName);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         yield return new WaitForSeconds(1);
 

@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbc3237e3795f54fb5ce82522f706e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newInput: {fileID: -61433537623641249, guid: abe505cdd37ff544ba7c894de730e922, type: 3}
 --- !u!114 &434250064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTextMeshProUGUI: {fileID: 1902294724}
-  newInput: {fileID: 266690911615532359, guid: abe505cdd37ff544ba7c894de730e922, type: 3}
 --- !u!1 &2027697085
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbc3237e3795f54fb5ce82522f706e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newInput: {fileID: -61433537623641249, guid: abe505cdd37ff544ba7c894de730e922, type: 3}
 --- !u!1 &2067744310
 GameObject:
   m_ObjectHideFlags: 0
