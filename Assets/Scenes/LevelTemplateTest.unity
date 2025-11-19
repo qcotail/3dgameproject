@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tmp: {fileID: 778314195}
   sceneTransition: {fileID: 789392618}
+  didWin: 1
 --- !u!4 &530487943
 Transform:
   m_ObjectHideFlags: 0
@@ -598,7 +599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 789392619}
-  instance: {fileID: 0}
 --- !u!95 &789392619
 Animator:
   serializedVersion: 5

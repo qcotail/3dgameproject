@@ -13,7 +13,7 @@ public class LevelTemplate : MonoBehaviour
     public bool didWin;
     // *****                                                                           ***** \\
 
-    private float timer;
+    private float timer = 6.7f;
     private TimeSpan time;
 
     bool sceneChanged;
@@ -29,16 +29,33 @@ public class LevelTemplate : MonoBehaviour
         {
             return;
         }
+
         // Timer
-        timer += Time.deltaTime * 1.85f;
+        timer -= Time.deltaTime * 1.85f;
         time = TimeSpan.FromSeconds(timer);
         tmp.text = time.ToString("ss'.'fff");
-        if (timer >= 6.7f)
+        if (timer <= 0)
         {
+            tmp.text = "00.000";
             PersistentData.didWin = didWin;
             sceneChanged = true;
             sceneTransition.SceneTransitionTo("kurt_scene");
         }
+
+
+
+
+
+        // Timer
+        //timer += Time.deltaTime * 1.85f;
+        //time = TimeSpan.FromSeconds(timer);
+        //tmp.text = time.ToString("ss'.'fff");
+        //if (timer >= 6.7f)
+        //{
+        //    PersistentData.didWin = didWin;
+        //    sceneChanged = true;
+        //    sceneTransition.SceneTransitionTo("kurt_scene");
+        //}
         
     }
 }
