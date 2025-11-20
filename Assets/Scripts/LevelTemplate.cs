@@ -26,6 +26,7 @@ public class LevelTemplate : MonoBehaviour
     void Start()
     {
         didWin = false;
+        timerUI.text = "06.700";
     }
 
     void Update()
