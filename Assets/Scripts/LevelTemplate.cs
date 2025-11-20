@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class LevelTemplate : MonoBehaviour
 {
-    [SerializeField] public TextMeshProUGUI tmp;
+    [SerializeField] public TextMeshProUGUI timerUI;
     [SerializeField] private SceneTransition sceneTransition;
 
     // ***** UPDATE THIS TO FALSE OR TRUE IF PLAYER WON OR NOT, BY DEFAULT IT IS FALSE ***** \\
-    public bool didWin;
+    [SerializeField] public bool didWin;
+    // *****                                                                           ***** \\
+
+    // ***** UPDATE THIS TO CUSTOMIZE HOW LONG YOU WANT TO WAIT BEFORE TIMER STARTS AND HOW LONG AFTER TIMER ENDS TO WAIT ***** \\
+    [SerializeField] public float paddingtimerbefore = 2f;
+    [SerializeField] public float paddingtimerafter = 2f;
     // *****                                                                           ***** \\
 
     private float timer = 6.7f;
@@ -25,37 +30,30 @@ public class LevelTemplate : MonoBehaviour
 
     void Update()
     {
-        if (sceneChanged)
+        if (paddingtimerbefore <= 0)
         {
-            return;
+            if (sceneChanged == false)
+            {
+                // Timer
+                timer -= Time.deltaTime * 1.85f;
+                time = TimeSpan.FromSeconds(timer);
+                timerUI.text = time.ToString("ss'.'fff");
+            }
+            if (timer <= 0)
+            {
+                if (sceneChanged == false)
+                {
+                    timerUI.text = "00.000";
+                    PersistentData.didWin = didWin;
+                    sceneChanged = true;
+                }             
+                if (paddingtimerafter <= 0)
+                {
+                    sceneTransition.SceneTransitionTo("kurt_scene");
+                }
+                paddingtimerafter -= Time.deltaTime;
+            }
         }
-
-        // Timer
-        timer -= Time.deltaTime * 1.85f;
-        time = TimeSpan.FromSeconds(timer);
-        tmp.text = time.ToString("ss'.'fff");
-        if (timer <= 0)
-        {
-            tmp.text = "00.000";
-            PersistentData.didWin = didWin;
-            sceneChanged = true;
-            sceneTransition.SceneTransitionTo("kurt_scene");
-        }
-
-
-
-
-
-        // Timer
-        //timer += Time.deltaTime * 1.85f;
-        //time = TimeSpan.FromSeconds(timer);
-        //tmp.text = time.ToString("ss'.'fff");
-        //if (timer >= 6.7f)
-        //{
-        //    PersistentData.didWin = didWin;
-        //    sceneChanged = true;
-        //    sceneTransition.SceneTransitionTo("kurt_scene");
-        //}
-        
+        paddingtimerbefore -= Time.deltaTime;
     }
 }
