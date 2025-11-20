@@ -10,7 +10,11 @@ public class LevelTemplate : MonoBehaviour
     [SerializeField] private SceneTransition sceneTransition;
 
     // ***** UPDATE THIS TO FALSE OR TRUE IF PLAYER WON OR NOT, BY DEFAULT IT IS FALSE ***** \\
-    [SerializeField] public bool didWin;
+    [SerializeField] public bool didWin = false;
+
+    // ***** EXAMPLE OF WHAT YOU PUT IN YOUR SCRIPT TO WIN OR LOSE: ***** \\
+    //[SerializeField] public LevelTemplate lvltmp;
+    //lvltmp.didWin = true;
     // *****                                                                           ***** \\
 
     // ***** UPDATE THIS TO CUSTOMIZE HOW LONG YOU WANT TO WAIT BEFORE TIMER STARTS AND HOW LONG AFTER TIMER ENDS TO WAIT ***** \\
@@ -25,7 +29,6 @@ public class LevelTemplate : MonoBehaviour
 
     void Start()
     {
-        didWin = false;
         timerUI.text = "06.700";
     }
 
