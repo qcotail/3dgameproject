@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,10 +15,11 @@ public class LevelTemplate : MonoBehaviour
 
     // ***** EXAMPLE OF WHAT YOU PUT IN YOUR SCRIPT TO WIN OR LOSE: ***** \\
     //[SerializeField] public LevelTemplate lvltmp;
-    //lvltmp.didWin = true;
+    //bool didWin = true or false
+    //lvltmp.FinishMinigame(didWin);
     // *****                                                                           ***** \\
 
-    // ***** UPDATE THIS TO CUSTOMIZE HOW LONG YOU WANT TO WAIT BEFORE TIMER STARTS AND HOW LONG AFTER TIMER ENDS TO WAIT ***** \\
+    // ***** UPDATE THIS ON THE INSPECTOR TO CUSTOMIZE HOW LONG YOU WANT TO WAIT BEFORE TIMER STARTS AND HOW LONG AFTER TIMER ENDS TO WAIT ***** \\
     [SerializeField] public float paddingtimerbefore = 2f;
     [SerializeField] public float paddingtimerafter = 2f;
     // *****                                                                           ***** \\
@@ -26,6 +28,12 @@ public class LevelTemplate : MonoBehaviour
     private TimeSpan time;
 
     bool sceneChanged;
+
+    public void FinishMinigame(bool didWinParam)
+    {
+        didWin = didWinParam;
+        timer = 0;
+    }
 
     void Start()
     {

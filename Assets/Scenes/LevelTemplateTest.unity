@@ -255,6 +255,14 @@ PrefabInstance:
       propertyPath: sceneTransition
       value: 
       objectReference: {fileID: 283138338}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: paddingtimerafter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: paddingtimerbefore
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
