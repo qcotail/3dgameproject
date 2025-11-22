@@ -14,7 +14,7 @@ public class LeftCardDropArea : MonoBehaviour, ICardDropArea
             currentCard = card;
             card.transform.position = transform.position;
             Debug.Log(card.name);
-            if (card.name.ToString() == "Six")
+            if (card.name.ToString() == "One")
             {
                 saulSwitchManManager.LeftCard = true;
             }

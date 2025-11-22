@@ -35,6 +35,10 @@ public class LevelTemplate : MonoBehaviour
     // Call To Finish Your Mini Game
     public void FinishMinigame(bool didWinParam)
     {
+        if (timer <= 0)
+        {
+            return;
+        }
         didWin = didWinParam;
         timer = 0;
         Debug.Log("Finished Game, didWin: " + didWin);
@@ -43,11 +47,11 @@ public class LevelTemplate : MonoBehaviour
     // Call To Dictate When The Player Can Start Playing The Mini Game
     public bool CanPlay()
     {
-        if (paddingtimerbefore >0 || paddingtimerafter > 0 || timer <= 0)
+        if (paddingtimerbefore <= 0 || paddingtimerafter <= 0)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     void Start()
@@ -57,6 +61,9 @@ public class LevelTemplate : MonoBehaviour
 
     void Update()
     {
+        // ***** Uncomment to debug if didWin worked
+        //Debug.Log(didWin);
+
         if (paddingtimerbefore <= 0)
         {
             if (sceneChanged == false)
@@ -76,7 +83,7 @@ public class LevelTemplate : MonoBehaviour
                 }             
                 if (paddingtimerafter <= 0)
                 {
-                    sceneTransition.SceneTransitionTo("kurt_scene");
+                    sceneTransition.SceneTransitionTo("kurt_scene"); // main scene
                 }
                 paddingtimerafter -= Time.deltaTime;
             }

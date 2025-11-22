@@ -9,6 +9,8 @@ public class Card : MonoBehaviour
     private Collider col;
     private Vector3 startDragPosition;
 
+    private bool isDragging = false;
+
     void Start()
     {
         col = GetComponent<Collider>();
@@ -18,15 +20,27 @@ public class Card : MonoBehaviour
         if (lvltmp.CanPlay() == true)
         {
             startDragPosition = transform.position;
+            isDragging = true;
         }
-        //startDragPosition = transform.position;
+        else
+        {
+            isDragging = false;
+        }
     }
     private void OnMouseDrag()
     {
+        if (!isDragging)
+        {
+            return;
+        }
         transform.position = GetMousePositionInWorldSpace();
     }
     private void OnMouseUp()
     {
+        if (!isDragging)
+        {
+            return;
+        }
         col.enabled = false;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,6 +59,7 @@ public class Card : MonoBehaviour
         }
 
         col.enabled = true;
+        isDragging = false;
     }
 
     public Vector3 GetMousePositionInWorldSpace()

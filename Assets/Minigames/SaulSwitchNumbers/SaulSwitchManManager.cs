@@ -16,9 +16,9 @@ public class SaulSwitchManManager : MonoBehaviour
     {
         if (LeftCard == true && RightCard == true && didFinish == false)
         {
-            didFinish = true;
             didWin = true;
             lvltmp.FinishMinigame(didWin);
+            didFinish = true;
         }
     }
 }
