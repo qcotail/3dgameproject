@@ -41,7 +41,6 @@ public class LevelTemplate : MonoBehaviour
         }
         didWin = didWinParam;
         timer = 0;
-        Debug.Log("Finished Game, didWin: " + didWin);
     }
 
     // Call To Dictate When The Player Can Start Playing The Mini Game
@@ -80,6 +79,7 @@ public class LevelTemplate : MonoBehaviour
                     timerUI.text = "00.000";
                     PersistentData.didWin = didWin;
                     sceneChanged = true;
+                    Debug.Log("Finished Game, didWin: " + didWin);
                 }             
                 if (paddingtimerafter <= 0)
                 {
