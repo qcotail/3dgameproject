@@ -14,35 +14,39 @@ public class Card : MonoBehaviour
     private void OnMouseDown()
     {
         startDragPosition = transform.position;
-        //transform.position = GetMousePositionInWorldSpace();
     }
     private void OnMouseDrag()
     {
-        //transform.position = GetMousePositionInWorldSpace();
+        transform.position = GetMousePositionInWorldSpace();
     }
     private void OnMouseUp()
     {
         col.enabled = false;
-        Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
-        col.enabled = true;
-        if (hitCollider != null && hitCollider.TryGetComponent(out ICardDropArea cardDropArea))
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            cardDropArea.OnCardDrop(this);
-        }
-        else
+            if (hit.collider.TryGetComponent(out ICardDropArea cardDropArea))
+            {
+                cardDropArea.OnCardDrop(this);
+            } else
+            {
+                transform.position = startDragPosition;
+            }
+        } else
         {
             transform.position = startDragPosition;
         }
+
+        col.enabled = true;
     }
+
     public Vector3 GetMousePositionInWorldSpace()
     {
-        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        p.z = 0f;
+        // Keeps the card at its current depth
+        float z = Camera.main.WorldToScreenPoint(transform.position).z;
+        Vector3 p = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, z));
         return p;
     }
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+
 }
