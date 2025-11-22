@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    [SerializeField] LevelTemplate lvltmp;
+
     private Collider col;
     private Vector3 startDragPosition;
 
@@ -13,7 +15,11 @@ public class Card : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        startDragPosition = transform.position;
+        if (lvltmp.CanPlay() == true)
+        {
+            startDragPosition = transform.position;
+        }
+        //startDragPosition = transform.position;
     }
     private void OnMouseDrag()
     {
@@ -47,6 +53,10 @@ public class Card : MonoBehaviour
         float z = Camera.main.WorldToScreenPoint(transform.position).z;
         Vector3 p = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, z));
         return p;
+    }
+    public Vector3 GetStartPosition()
+    {
+        return startDragPosition;
     }
 
 }

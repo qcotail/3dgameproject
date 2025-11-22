@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftCardDropArea : MonoBehaviour, ICardDropArea
+public class RightCardDropArea : MonoBehaviour, ICardDropArea
 {
     [SerializeField] SaulSwitchManManager saulSwitchManManager;
 
