@@ -5,7 +5,7 @@
 - Kurt Lara-Rosales
 - Francisco Gomez
 - Alex Hayet
-- Anka Enjin
+- Anka Engin
 
 ## Description:
 Warioware inspired game, but full of our inside jokes.
