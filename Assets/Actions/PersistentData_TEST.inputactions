@@ -1,0 +1,74 @@
+{
+    "name": "PersistentData_TEST",
+    "maps": [
+        {
+            "name": "up",
+            "id": "8c8637b2-e094-4659-b472-b4da20ca0f46",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c7e27c67-856a-40b5-849a-f2657cb674cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "48fa0565-af75-42af-91ea-73e8c41c9645",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "changescene",
+            "id": "65c9794d-3117-4373-b8b1-9fe1ad1b63df",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "7b53f4d1-b5ca-4ce1-9307-d90c7521ac48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a29e2f30-3dd3-47bd-b332-7dcf9bd813f7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "New control scheme",
+            "bindingGroup": "New control scheme",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

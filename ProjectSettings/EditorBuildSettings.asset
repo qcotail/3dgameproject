@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/kurt_scene.unity
+    guid: d559b2171ff0c534abc2d17ddf9854b2
+  - enabled: 1
+    path: Assets/Scenes/kurt_scene_2.unity
+    guid: e586c4e84ecf0f44485f1ccd08c47dec
+  - enabled: 1
+    path: Assets/Scenes/LevelTemplateTest.unity
+    guid: b09d41a3bb8293c46b4e25947472a2a7
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 22552fb3059f29149a868287bf1c82da, type: 2}

@@ -1,0 +1,46 @@
+{
+    "name": "TEMP_Test",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "b1c0d0d3-483c-45a9-a653-c427ad50aef2",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "38b9957a-e315-4d1e-b6fa-5ced2f82aa3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a6ab713b-1225-4f6d-869d-e86c1e1a59a5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Press",
+                    "processors": "Scale",
+                    "groups": "keyboard",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "keyboard",
+            "bindingGroup": "keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
