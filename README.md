@@ -12,9 +12,9 @@ Warioware inspired game, but full of our inside jokes.
 
 ## General Goals For Each Person:
 - Miguel
-  - Game design, Minigame levels
+  - Game design implementation, Minigame levels
 - Kurt
-  - Minigame levels
+  - Game design ideas, Minigame levels
 - Francisco
   - Minigame levels
 - Alex
