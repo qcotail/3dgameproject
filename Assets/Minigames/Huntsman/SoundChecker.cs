@@ -10,11 +10,12 @@ public class SoundChecker : MonoBehaviour {
     public Vector3 minScale;
     public Vector3 maxScale;
     private AudioClip microphoneAudioClip;
-    //something something levelTemplate lvltmpl;
+    [SerializeField] LevelTemplate lvltmp;
 
     // Start is called before the first frame update
     void Start() {
         MicrophoneToAudioClip();
+        lvltmp.didWin = true;
     }
 
     // Update is called once per frame
@@ -22,10 +23,11 @@ public class SoundChecker : MonoBehaviour {
         float audioStrength = soundSensibility * returnAudioStrength(Microphone.GetPosition(Microphone.devices[0]), microphoneAudioClip);
         if (audioStrength < threshold) {
             audioStrength = 0;
-            //lvltmpl.didWin = true;
         }
-        transform.localScale = Vector3.Lerp(minScale, maxScale, audioStrength);
-        //lvltmpl.didWin = false;
+        else {
+            transform.localScale = Vector3.Lerp(minScale, maxScale, audioStrength);
+            lvltmp.FinishMinigame(false);
+        }
     }
 
     public void MicrophoneToAudioClip() {
