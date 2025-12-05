@@ -2,7 +2,7 @@
 
 ## Group Members:
 - Miguel Melo Ochoa
-- Kurt Lara-Rosales
+- Kurt Rosales
 - Francisco Gomez
 - Alex Hayet
 - Anka Engin
