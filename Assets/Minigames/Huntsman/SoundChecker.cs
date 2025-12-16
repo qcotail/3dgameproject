@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SoundChecker : MonoBehaviour {
     
@@ -10,12 +11,15 @@ public class SoundChecker : MonoBehaviour {
     public Vector3 minScale;
     public Vector3 maxScale;
     private AudioClip microphoneAudioClip;
+    [SerializeField] private Material bodyColor;
     [SerializeField] LevelTemplate lvltmp;
+    public UnityEvent explosion;
 
     // Start is called before the first frame update
     void Start() {
         MicrophoneToAudioClip();
         lvltmp.didWin = true;
+        bodyColor.color = Color.blue;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class SoundChecker : MonoBehaviour {
         }
         else {
             transform.localScale = Vector3.Lerp(minScale, maxScale, audioStrength);
+            StartCoroutine(Explode());
             lvltmp.FinishMinigame(false);
         }
     }
@@ -47,6 +52,14 @@ public class SoundChecker : MonoBehaviour {
             audioStrength += Mathf.Abs(waveData[i]);
         }
         return audioStrength / window;
+    }
+
+    public IEnumerator Explode() {
+        yield return new WaitForSeconds(1);
+        bodyColor.color = Color.red;
+        yield return new WaitForSeconds(1);
+        explosion.Invoke();
+        Destroy(gameObject);
     }
 
 }
