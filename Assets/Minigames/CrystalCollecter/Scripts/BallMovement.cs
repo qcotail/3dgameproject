@@ -3,15 +3,15 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public float speed = 10f;
-    public Camera mainCamera;
+    public Transform planet; // NEW: need planet reference
     
     private Rigidbody rb;
+    private Camera mainCamera;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (mainCamera == null)
-            mainCamera = Camera.main;
+        mainCamera = Camera.main;
     }
     
     void FixedUpdate()
@@ -19,17 +19,14 @@ public class BallController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         
-        // Get camera's forward and right directions (flattened to ball's surface)
-        Vector3 forward = mainCamera.transform.forward;
-        Vector3 right = mainCamera.transform.right;
+        // Get planet up direction
+        Vector3 planetUp = (transform.position - planet.position).normalized;
         
-        // Remove component pointing toward/away from planet
-        forward.y = 0;
-        right.y = 0;
-        forward.Normalize();
-        right.Normalize();
+        // Get camera directions projected onto planet surface
+        Vector3 forward = Vector3.ProjectOnPlane(mainCamera.transform.forward, planetUp).normalized;
+        Vector3 right = Vector3.ProjectOnPlane(mainCamera.transform.right, planetUp).normalized;
         
-        // Calculate movement relative to camera
+        // Calculate movement relative to planet surface
         Vector3 movement = (forward * moveVertical + right * moveHorizontal);
         
         rb.AddForce(movement * speed);

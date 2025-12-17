@@ -183,10 +183,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8433165117413081427, guid: ae18781652e568a4f8581083cefd74f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab49882c7f13ddb43b5e86a55892b702, type: 2}
+    - target: {fileID: -6347139242421335443, guid: ae18781652e568a4f8581083cefd74f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f1d4c11bed1feb747890033109b7b1f7, type: 2}
+    - target: {fileID: 903493730282314047, guid: ae18781652e568a4f8581083cefd74f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab49882c7f13ddb43b5e86a55892b702, type: 2}
     - target: {fileID: 919132149155446097, guid: ae18781652e568a4f8581083cefd74f5, type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8368211623382929560, guid: ae18781652e568a4f8581083cefd74f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab49882c7f13ddb43b5e86a55892b702, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -230,7 +246,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 2
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -349,8 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f09e1ef4736024492d0057c2c65290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 250
-  mainCamera: {fileID: 1914541606}
+  speed: 100
+  planet: {fileID: 343714700}
 --- !u!1 &640858834
 GameObject:
   m_ObjectHideFlags: 0
