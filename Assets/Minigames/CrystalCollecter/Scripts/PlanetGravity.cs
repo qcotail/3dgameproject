@@ -23,7 +23,7 @@ public class SphericalGravity : MonoBehaviour
         rb.AddForce(gravityDirection * gravity);
         
         // Orient ball to stand upright relative to planet surface
-        Quaternion targetRotation = Quaternion.FromToRotation(transform.up, -gravityDirection) * transform.rotation;
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * Time.deltaTime);
+        // Quaternion targetRotation = Quaternion.FromToRotation(transform.up, -gravityDirection) * transform.rotation;
+        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * Time.deltaTime);
     }
 }
