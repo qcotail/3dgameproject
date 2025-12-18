@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour{
 	float x, z;                   /* PlayerInput        */
-	float speed = 8f;           /* F/B Speed          */
+	float speed = 12f;           /* F/B Speed          */
 	float turnSpeed = 0.8f;     /* L/R Speed          */
 	Rigidbody playerRigidBody; /* Player             */
 
