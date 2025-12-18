@@ -40,13 +40,13 @@ public class FriedChicken : MonoBehaviour {
                 BoxCollider newBox2 = goodChicken2.GetComponent<BoxCollider>();
                 newBox2.size = new Vector3(0.001f, 0.001f, 0.001f);
                 goodChicken2.transform.position += new Vector3(0, 0.8f, 0.7f);
-                //LosPollosSounds.play("");
+                SoundManager.play("Correct");
             }
         }
         else {
             if (!alreadyOver) {
                 alreadyOver = true;
-                //LosPollosSounds.play("");
+                SoundManager.play("Incorrect");
                 StartCoroutine(endMinigame());
                 lvltmp.FinishMinigame(false);
                 correspondingCheckmark[0].SetActive(false);
@@ -81,7 +81,7 @@ public class FriedChicken : MonoBehaviour {
         }
         chickenReady[1] = rng;
         correspondingCheckmark[rng - 1].SetActive(true);
-        //LosPollosSounds.play("");
+        //SoundManager.play("");
         
     }
 
@@ -109,7 +109,7 @@ public class FriedChicken : MonoBehaviour {
             }
             chickenReady[3] = rng;
             correspondingCheckmark[rng - 1].SetActive(true);
-            //LosPollosSounds.play("");
+            //SoundManager.play("");
         }
         else {
             cookTimer -= Time.deltaTime;
@@ -141,12 +141,13 @@ public class FriedChicken : MonoBehaviour {
     }
 
     public IEnumerator endMinigame() {
-        //LosPollosSounds.play("");
+        SoundManager.play("YoureFired");
         yield return new WaitForSeconds(1);
         GameObject badChicken = Instantiate(rawChicken, new Vector3(0, 8, 0), Random.rotation);
         badChicken.transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
         badChicken.AddComponent<Rigidbody>();
         yield return new WaitForSeconds(1);
         gusVideo.SetActive(true);
+        SoundManager.play("LosPollosExplodes");
     }
 }

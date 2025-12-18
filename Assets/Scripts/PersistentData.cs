@@ -7,4 +7,5 @@ public static class PersistentData {
     public static bool isModified = false;
     public static bool didWin;
     public static bool hardMode = false;
+    public static float currlevels = 0;
 }

@@ -13,11 +13,11 @@ public class LevelTemplate : MonoBehaviour
     [SerializeField] public bool didWin = false;
 
     /***** EXAMPLE OF WHAT YOU PUT IN YOUR SCRIPT TO WIN OR LOSE: *****
-     * 
+     *
      * [SerializeField] public LevelTemplate lvltmp;
      * bool didWin = true
      * lvltmp.FinishMinigame(didWin);
-     * 
+     *
      */
 
     // ***** UPDATE THIS ON THE INSPECTOR TO CUSTOMIZE HOW LONG YOU WANT TO WAIT BEFORE TIMER STARTS AND HOW LONG AFTER TIMER ENDS TO WAIT
@@ -27,7 +27,8 @@ public class LevelTemplate : MonoBehaviour
 
     // *****
 
-    private float timer = 6.7f;
+    public float timer = 6.7f;
+		public string startText = "Start!";
     private TimeSpan time;
 
     bool sceneChanged;
@@ -55,7 +56,7 @@ public class LevelTemplate : MonoBehaviour
 
     void Start()
     {
-        timerUI.text = "06.700";
+        timerUI.text = startText;
     }
 
     void Update()
@@ -80,10 +81,10 @@ public class LevelTemplate : MonoBehaviour
                     PersistentData.didWin = didWin;
                     sceneChanged = true;
                     Debug.Log("Finished Game, didWin: " + didWin);
-                }             
+                }
                 if (paddingtimerafter <= 0)
                 {
-                    sceneTransition.SceneTransitionTo("kurt_scene"); // main scene
+                    sceneTransition.SceneTransitionTo("othermain"); // main scene
                 }
                 paddingtimerafter -= Time.deltaTime;
             }

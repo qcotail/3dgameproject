@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour{
 	float x, z;                   /* PlayerInput        */
-	float speed = 3f;            /* F/B Speed          */
-	float turnSpeed = 0.2f;     /* L/R Speed          */
+	float speed = 12f;           /* F/B Speed          */
+	float turnSpeed = 0.8f;     /* L/R Speed          */
 	Rigidbody playerRigidBody; /* Player             */
 
 	void Start(){
@@ -20,8 +20,9 @@ public class TankMovement : MonoBehaviour{
 		z = Input.GetAxis("Vertical");  /* L/R */
 
 		/* Going backwards will be slower */
-		if (z < 0){
-			z /= 6;
+
+		if (z != 0){
+			z /= 1.8f;
 		}
 	}
 
