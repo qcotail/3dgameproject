@@ -3167,6 +3167,7 @@ MonoBehaviour:
   - {fileID: 1788498080}
   - {fileID: 1394825271}
   gusVideo: {fileID: 1671982302}
+  timer: 6.7
 --- !u!4 &1881194544
 Transform:
   m_ObjectHideFlags: 0
@@ -3389,6 +3390,14 @@ PrefabInstance:
       propertyPath: sceneTransition
       value: 
       objectReference: {fileID: 1088268884}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: paddingtimerafter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: paddingtimerbefore
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -82,7 +82,6 @@ public class FriedChicken : MonoBehaviour {
         }
         chickenReady[1] = rng;
         correspondingCheckmark[rng - 1].SetActive(true);
-        //SoundManager.play("");
         
     }
 
@@ -110,7 +109,6 @@ public class FriedChicken : MonoBehaviour {
             }
             chickenReady[3] = rng;
             correspondingCheckmark[rng - 1].SetActive(true);
-            //SoundManager.play("");
         }
         else {
             cookTimer -= Time.deltaTime;
