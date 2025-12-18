@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/CatSkater.unity
     guid: e6cd01c0cdefed342b48f954c797b3e5
   - enabled: 1
-    path: Assets/Scenes/CrystalCollecter.unity
+    path: Assets/Scenes/CosmicRoll.unity
     guid: c62258a8ef4c0ad43b9dddacc9372f89
   - enabled: 1
     path: Assets/Scenes/Huntsman.unity
