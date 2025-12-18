@@ -118,28 +118,4 @@ public class SimpleBallCamera : MonoBehaviour
         }
     }
     
-    void OnGUI()
-    {
-        if (ball == null || ballRb == null || cam == null) return;
-        
-        float ballSpeed = ballRb.velocity.magnitude;
-        Vector3 viewportPoint = cam.WorldToViewportPoint(ball.position);
-        float camSpeed = cameraVelocity.magnitude;
-        
-        bool ballInView = viewportPoint.x > viewportMargin && viewportPoint.x < (1f - viewportMargin) &&
-                          viewportPoint.y > viewportMargin && viewportPoint.y < (1f - viewportMargin) &&
-                          viewportPoint.z > 0;
-        
-        // Create a box in top-left corner
-        GUI.Box(new Rect(10, 10, 250, 160), "Camera Debug Info");
-        
-        // Display values
-        GUI.Label(new Rect(20, 35, 230, 20), $"Ball Speed: {ballSpeed:F2}");
-        GUI.Label(new Rect(20, 55, 230, 20), $"Ball In View: {ballInView}");
-        GUI.Label(new Rect(20, 75, 230, 20), $"Viewport: ({viewportPoint.x:F2}, {viewportPoint.y:F2})");
-        GUI.Label(new Rect(20, 95, 230, 20), $"Camera Velocity: {camSpeed:F2}");
-        GUI.Label(new Rect(20, 115, 230, 20), $"Is Returning: {isReturning}");
-        GUI.Label(new Rect(20, 135, 230, 20), $"Min Speed Threshold: {minSpeedToFollow}");
-        GUI.Label(new Rect(20, 155, 230, 20), $"Viewport Margin: {viewportMargin:F2}");
-    }
 }
