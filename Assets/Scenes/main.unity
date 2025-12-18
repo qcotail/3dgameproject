@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 1626415618}
   - component: {fileID: 1626415617}
   m_Layer: 3
-  m_Name: Text (TMP)
+  m_Name: newgametext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1055,10 +1055,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 1bee49882c52f814387f1ca9beded3bc, type: 3}
+      - m_Target: {fileID: 11500000, guid: 24512e7415836ea469df4c30f815aae6, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1066,7 +1066,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &2145410147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145410144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bee49882c52f814387f1ca9beded3bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 24512e7415836ea469df4c30f815aae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1626415617}
