@@ -27,7 +27,7 @@ public class LevelTemplate : MonoBehaviour
 
     // *****
 
-    private float timer = 6.7f;
+    public float timer = 6.7f;
     private TimeSpan time;
 
     bool sceneChanged;
