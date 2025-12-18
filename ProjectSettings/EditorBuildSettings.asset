@@ -14,5 +14,35 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelTemplateTest.unity
     guid: b09d41a3bb8293c46b4e25947472a2a7
+  - enabled: 1
+    path: Assets/Scenes/main.unity
+    guid: ade56d0df4235534c81c0382163b083a
+  - enabled: 1
+    path: Assets/Scenes/othermain.unity
+    guid: 2b42300fdd76c5f4e9f7e042193aea49
+  - enabled: 1
+    path: Assets/Scenes/CatSkater.unity
+    guid: e6cd01c0cdefed342b48f954c797b3e5
+  - enabled: 1
+    path: Assets/Scenes/CrystalCollecter.unity
+    guid: c62258a8ef4c0ad43b9dddacc9372f89
+  - enabled: 1
+    path: Assets/Scenes/Huntsman.unity
+    guid: 0f3141df57d0546459d9aa9eb45ae369
+  - enabled: 1
+    path: Assets/Scenes/LosPollosHermanos.unity
+    guid: c5ff12cb5e1be214da3ff6d827be0772
+  - enabled: 1
+    path: Assets/Scenes/SaulSwitchNumbers.unity
+    guid: d8c950d7ccd0609428192e921bdbe372
+  - enabled: 1
+    path: Assets/Scenes/OmningIt.unity
+    guid: b443caa14b6cc674783dcedf04a7734e
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Yummers.unity
+    guid: 82318307c68618b44943b7f667191719
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 22552fb3059f29149a868287bf1c82da, type: 2}
