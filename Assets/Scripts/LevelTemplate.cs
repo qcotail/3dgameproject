@@ -27,7 +27,7 @@ public class LevelTemplate : MonoBehaviour
 
     // *****
 
-    private float timer = 6.7f;
+    public float timer = 6.7f;
     private TimeSpan time;
 
     bool sceneChanged;
@@ -83,7 +83,7 @@ public class LevelTemplate : MonoBehaviour
                 }             
                 if (paddingtimerafter <= 0)
                 {
-                    sceneTransition.SceneTransitionTo("kurt_scene"); // main scene
+                    sceneTransition.SceneTransitionTo("othermain"); // main scene
                 }
                 paddingtimerafter -= Time.deltaTime;
             }
