@@ -8,7 +8,7 @@ public class MainScript : MonoBehaviour
 {
     [SerializeField] public string[] MinigameScenes;
     [SerializeField] SceneTransition sceneTransition;
-    public Sprite[] loadedSprites;
+    public Sprite[] hearts;
 
     void Start()
     {
