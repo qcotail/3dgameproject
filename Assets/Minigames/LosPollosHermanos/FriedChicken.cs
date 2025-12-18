@@ -20,6 +20,7 @@ public class FriedChicken : MonoBehaviour {
     public GameObject friedChicken;
     public GameObject[] correspondingCheckmark = new GameObject[6];
     public GameObject gusVideo;
+    public float timer = 6.7f;
     public void buttonClicked(int buttonNumber) {
         objectsMoving[buttonNumber - 1] = true;
         if (buttonNumber == chickenReady[0] || buttonNumber == chickenReady[1] || buttonNumber == chickenReady[2] || buttonNumber == chickenReady[3]) {
@@ -137,6 +138,11 @@ public class FriedChicken : MonoBehaviour {
         if(objectsMoving[5] && movementTimer[5] > 0.0) {
             correspondingObject[5].transform.position += new Vector3(0, 0.002f, 0);
             movementTimer[5] -= Time.deltaTime;
+        }
+        if (lvltmp.timer < 0 && !alreadyOver) {
+            alreadyOver = true;
+            StartCoroutine(endMinigame());
+            lvltmp.FinishMinigame(false);
         }
     }
 

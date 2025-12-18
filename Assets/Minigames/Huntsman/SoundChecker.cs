@@ -40,16 +40,14 @@ public class SoundChecker : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        float audioStrength = soundSensibility * returnAudioStrength(Microphone.GetPosition(Microphone.devices[0]), microphoneAudioClip);
-        if (audioStrength < threshold) {
-            audioStrength = 0;
+        if (lvltmp.timer < 0) {
+            alreadyOver = true;
         }
-        else {
-            if (!alreadyOver) {
-                alreadyOver = true;
-                StartCoroutine(Explode());
-                lvltmp.FinishMinigame(false);
-            }
+        float audioStrength = soundSensibility * returnAudioStrength(Microphone.GetPosition(Microphone.devices[0]), microphoneAudioClip);
+        if (audioStrength > threshold && !alreadyOver) {
+            alreadyOver = true;
+            StartCoroutine(Explode());
+            lvltmp.FinishMinigame(false);
         }
     }
 
