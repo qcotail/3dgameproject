@@ -12,15 +12,30 @@ public class SoundChecker : MonoBehaviour {
     public Vector3 maxScale;
     private AudioClip microphoneAudioClip;
     [SerializeField] private Material bodyColor;
+    [SerializeField] private Material brightRed;
+    public Renderer[] renderers = new Renderer[8];
     [SerializeField] LevelTemplate lvltmp;
     public bool alreadyOver = false;
     public UnityEvent explosion;
-
+    public GameObject huntsman1;
+    public GameObject huntsman2;
+    public UnityEvent huntsmanshot;
+    public GameObject laserControl;
+    public GameObject currentSemibot;
     // Start is called before the first frame update
     void Start() {
+        huntsman2.SetActive(false);
+        huntsman1.SetActive(true);
         MicrophoneToAudioClip();
         lvltmp.didWin = true;
-        bodyColor.color = Color.blue;
+        renderers[0].material = bodyColor;
+        renderers[1].material = bodyColor;
+        renderers[2].material = bodyColor;
+        renderers[3].material = bodyColor;
+        renderers[4].material = bodyColor;
+        renderers[5].material = bodyColor;
+        renderers[6].material = bodyColor;
+        renderers[7].material = bodyColor;
     }
 
     // Update is called once per frame
@@ -58,12 +73,24 @@ public class SoundChecker : MonoBehaviour {
     }
 
     public IEnumerator Explode() {
+        huntsman1.SetActive(false);
+        huntsman2.SetActive(true);
         SoundManager.play("HuntsmanShoot");
         yield return new WaitForSeconds(1);
+        huntsmanshot.Invoke();
         SoundManager.play("HuntsmanFiring");
         SoundManager.play("Death");
-        bodyColor.color = Color.red;
-        yield return new WaitForSeconds(1);
+        renderers[0].material = brightRed;
+        renderers[1].material = brightRed;
+        renderers[2].material = brightRed;
+        renderers[3].material = brightRed;
+        renderers[4].material = brightRed;
+        renderers[5].material = brightRed;
+        renderers[6].material = brightRed;
+        renderers[7].material = brightRed;
+        yield return new WaitForSeconds(0.05f);
+        laserControl.SetActive(false);
+        yield return new WaitForSeconds(0.9f);
         explosion.Invoke();
         SoundManager.play("SemibotExplosion");
         Destroy(gameObject);
