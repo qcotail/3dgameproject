@@ -83,7 +83,7 @@ public class LevelTemplate : MonoBehaviour
                 }             
                 if (paddingtimerafter <= 0)
                 {
-                    sceneTransition.SceneTransitionTo("kurt_scene"); // main scene
+                    sceneTransition.SceneTransitionTo("othermain"); // main scene
                 }
                 paddingtimerafter -= Time.deltaTime;
             }
