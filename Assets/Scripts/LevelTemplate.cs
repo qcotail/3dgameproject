@@ -28,6 +28,7 @@ public class LevelTemplate : MonoBehaviour
     // *****
 
     public float timer = 6.7f;
+		public string startText = "Start!";
     private TimeSpan time;
 
     bool sceneChanged;
@@ -55,7 +56,7 @@ public class LevelTemplate : MonoBehaviour
 
     void Start()
     {
-        timerUI.text = "Start!";
+        timerUI.text = startText;
     }
 
     void Update()
