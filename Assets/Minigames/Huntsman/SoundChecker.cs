@@ -13,6 +13,7 @@ public class SoundChecker : MonoBehaviour {
     private AudioClip microphoneAudioClip;
     [SerializeField] private Material bodyColor;
     [SerializeField] LevelTemplate lvltmp;
+    public bool alreadyOver = false;
     public UnityEvent explosion;
 
     // Start is called before the first frame update
@@ -29,9 +30,11 @@ public class SoundChecker : MonoBehaviour {
             audioStrength = 0;
         }
         else {
-            transform.localScale = Vector3.Lerp(minScale, maxScale, audioStrength);
-            StartCoroutine(Explode());
-            lvltmp.FinishMinigame(false);
+            if (!alreadyOver) {
+                alreadyOver = true;
+                StartCoroutine(Explode());
+                lvltmp.FinishMinigame(false);
+            }
         }
     }
 
@@ -55,10 +58,14 @@ public class SoundChecker : MonoBehaviour {
     }
 
     public IEnumerator Explode() {
+        SoundManager.play("HuntsmanShoot");
         yield return new WaitForSeconds(1);
+        SoundManager.play("HuntsmanFiring");
+        SoundManager.play("Death");
         bodyColor.color = Color.red;
         yield return new WaitForSeconds(1);
         explosion.Invoke();
+        SoundManager.play("SemibotExplosion");
         Destroy(gameObject);
     }
 
