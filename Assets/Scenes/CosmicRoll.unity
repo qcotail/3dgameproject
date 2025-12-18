@@ -527,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 6677769690679213425, guid: 5de4bb018ac783343b3f7d20d6c1d13d, type: 3}
   planet: {fileID: 343714700}
-  numberOfMonsters: 3
+  numberOfMonsters: 1
   spawnHeightOffset: 0.5
   raycastDistance: 200
   minDistanceBetweenMonsters: 150

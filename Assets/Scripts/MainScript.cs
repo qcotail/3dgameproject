@@ -38,13 +38,19 @@ public class MainScript : MonoBehaviour
     // logic for picking minigame scene
     void NextMiniGame()
     {
-        if (PersistentData.currlevels >= 10) {
+        if (PersistentData.currlevels == 10)
+        {
             sceneTransition.SceneTransitionTo("CatSkater");
-        } else
+        }
+        else if (PersistentData.currlevels == 5)
+        {
+            sceneTransition.SceneTransitionTo("CosmicRoll");
+        }
+        else
         {
             int randomnum = UnityEngine.Random.Range(0, MinigameScenes.Length);
             sceneTransition.SceneTransitionTo(MinigameScenes[randomnum]);
         }
-            Debug.Log("Minigame Loaded");
+        Debug.Log("Minigame Loaded");
     }
 }
