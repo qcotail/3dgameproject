@@ -2864,7 +2864,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6714c1bba7fcda04dab5241ef359e546, type: 3}
   - name: LosPollosExplodes
     audio:
-    - {fileID: 8300000, guid: 295020ccdf01ac04db17a294d36a891f, type: 3}
+    - {fileID: 8300000, guid: 0fcaaf2d634757b4ba2b18ce1b687d41, type: 3}
 --- !u!1 &1788498080
 GameObject:
   m_ObjectHideFlags: 0
