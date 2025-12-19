@@ -40,13 +40,13 @@ public class FriedChicken : MonoBehaviour {
                 BoxCollider newBox2 = goodChicken2.GetComponent<BoxCollider>();
                 newBox2.size = new Vector3(0.001f, 0.001f, 0.001f);
                 goodChicken2.transform.position += new Vector3(0, 0.8f, 0.7f);
-                SoundManager.play("Correct");
+                NewSoundManager.playTheAudio("Correct");
             }
         }
         else {
             if (!alreadyOver) {
                 alreadyOver = true;
-                SoundManager.play("Incorrect");
+                NewSoundManager.playTheAudio("Incorrect");
                 StartCoroutine(endMinigame());
                 lvltmp.FinishMinigame(false);
                 correspondingCheckmark[0].SetActive(false);
@@ -144,13 +144,13 @@ public class FriedChicken : MonoBehaviour {
     }
 
     public IEnumerator endMinigame() {
-        SoundManager.play("YoureFired");
+        NewSoundManager.playTheAudio("YoureFired");
         yield return new WaitForSeconds(1);
         GameObject badChicken = Instantiate(rawChicken, new Vector3(0, 8, 0), Random.rotation);
         badChicken.transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
         badChicken.AddComponent<Rigidbody>();
         yield return new WaitForSeconds(1);
         gusVideo.SetActive(true);
-        SoundManager.play("LosPollosExplodes");
+        NewSoundManager.playTheAudio("LosPollosExplodes");
     }
 }

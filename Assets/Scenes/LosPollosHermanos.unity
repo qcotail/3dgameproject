@@ -2837,22 +2837,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773571307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fbfc5b15721ebd47b59c47e5131a417, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d30dfc4a43f24b4fb181a9a77429211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffects:
-  - name: YoureFired
-    audio:
-    - {fileID: 8300000, guid: 6714c1bba7fcda04dab5241ef359e546, type: 3}
-  - name: LosPollosExplodes
-    audio:
-    - {fileID: 8300000, guid: 295020ccdf01ac04db17a294d36a891f, type: 3}
-  - name: Correct
-    audio:
-    - {fileID: 8300000, guid: e6c6b47bc30994b40b297c718ff9a0ba, type: 3}
-  - name: Incorrect
-    audio:
-    - {fileID: 8300000, guid: fdd2b86d53447de4bb36fa4391deaa55, type: 3}
 --- !u!114 &1773571311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,9 +2849,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773571307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 868a5ebae9f349042aa0e6bc5d8ee348, type: 3}
+  m_Script: {fileID: 11500000, guid: d221baae7d8210043b50bb01d195266c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffects:
+  - name: Correct
+    audio:
+    - {fileID: 8300000, guid: e6c6b47bc30994b40b297c718ff9a0ba, type: 3}
+  - name: Incorrect
+    audio:
+    - {fileID: 8300000, guid: fdd2b86d53447de4bb36fa4391deaa55, type: 3}
+  - name: YoureFired
+    audio:
+    - {fileID: 8300000, guid: 6714c1bba7fcda04dab5241ef359e546, type: 3}
+  - name: LosPollosExplodes
+    audio:
+    - {fileID: 8300000, guid: 295020ccdf01ac04db17a294d36a891f, type: 3}
 --- !u!1 &1788498080
 GameObject:
   m_ObjectHideFlags: 0
