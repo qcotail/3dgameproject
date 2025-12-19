@@ -1,4 +1,4 @@
-# Name of Game: Undecided
+# Name of Game: FREAK WARE
 
 ## Group Members:
 - Miguel Melo Ochoa
@@ -12,15 +12,23 @@ Warioware inspired game, but full of our inside jokes.
 
 ## General Goals For Each Person:
 - Miguel
-  - Game design implementation, Minigame levels
+  - Scene Transitions
+  - Level Template
+  - Saul Switch Numbers
 - Kurt
-  - Game design ideas, Minigame levels
+  - GitHub Consultant
+  - Cat Sk8r 2
 - Francisco
-  - Minigame levels
+  - General Consultant
+  - Los Pollos Hermanos
+  - Huntsmam
 - Alex
-  - Minigame levels
+  - Yummers
+  - Idea Generator
 - Anka
-  - Minigame levels
+  - Cosmic Sphere
+  - Lives System
+  - Polishing
 
 ## Example of Current Gameplay:
 (presenting within Unity in person)
