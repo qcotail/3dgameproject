@@ -26,8 +26,9 @@ Warioware inspired game, but full of our inside jokes.
   - Yummers
   - Idea Generator
 - Anka
-  - Cosmic Sphere
+  - Cosmic Roll
   - Lives System
+  - Scene Randomization
   - Polishing
 
 ## Example of Current Gameplay:
