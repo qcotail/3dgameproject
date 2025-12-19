@@ -20,7 +20,6 @@ public class FriedChicken : MonoBehaviour {
     public GameObject friedChicken;
     public GameObject[] correspondingCheckmark = new GameObject[6];
     public GameObject gusVideo;
-    public float timer = 6.7f;
     public void buttonClicked(int buttonNumber) {
         objectsMoving[buttonNumber - 1] = true;
         if (buttonNumber == chickenReady[0] || buttonNumber == chickenReady[1] || buttonNumber == chickenReady[2] || buttonNumber == chickenReady[3]) {

@@ -21,6 +21,9 @@ public class StarPickup : MonoBehaviour
     private bool isCollected = false;
     private float currentSpeed;
     private AudioSource audioSource;
+    public bool alreadyOver = false;
+    
+    [SerializeField] LevelTemplate lvltmp;
     
     public void Initialize(Transform playerTarget, Vector3 burstDirection)
     {
@@ -35,6 +38,10 @@ public class StarPickup : MonoBehaviour
     
     void Update()
     {
+        if (lvltmp.timer < 0 && !alreadyOver) {
+            alreadyOver = true;
+            lvltmp.FinishMinigame(false);
+        }
         // Keep spinning even after collected
         transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime, Space.Self);
         transform.Rotate(Vector3.right, spinSpeed * 0.7f * Time.deltaTime, Space.Self);
@@ -82,6 +89,11 @@ public class StarPickup : MonoBehaviour
         // You can add score/points here, play a sound, etc.
         // Example: GameManager.Instance.AddScore(10);
         Debug.Log("Star collected!");
+
+        if (!alreadyOver) {
+            alreadyOver = true;
+            lvltmp.FinishMinigame(true);
+        }
         
         // Stop moving
         velocity = Vector3.zero;
