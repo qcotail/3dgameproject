@@ -8,6 +8,8 @@ public class ButtonUI : MonoBehaviour
     //[SerializeField] private SceneTransition sceneTransition;
     public void NewGameButton()
     {
+        // Reset game data before starting new game
+        PersistentData.ResetGame();
         SceneManager.LoadScene("othermain");
     }
 }
