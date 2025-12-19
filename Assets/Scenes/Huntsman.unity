@@ -10237,12 +10237,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1880195980}
     - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: startText
+      value: Be Quiet!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
       propertyPath: sceneTransition
       value: 
       objectReference: {fileID: 2001088493}
     - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
       propertyPath: paddingtimerbefore
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

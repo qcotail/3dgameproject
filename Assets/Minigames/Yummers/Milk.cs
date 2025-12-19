@@ -9,18 +9,28 @@ public class Milk : MonoBehaviour
     private Collider col;
     private Vector3 startDragPosition;
     private bool isDragging = false;
-    public GameObject currentObject;
+    //public GameObject currentObject;
+    public float minimumXComponent = -1.8f;
+    public float maximumXComponent = -4f;
+    public float minimumYComponent = -2f;
+    public float maximumYComponent = 3f;
+    public float zAxisUnchanged = 5f;
 
     void Start()
     {
         col = GetComponent<Collider>();
+        float rng1 = Random.Range(minimumXComponent, maximumXComponent);
+        float rng2 = Random.Range(minimumYComponent, maximumYComponent);
+        //currentObject.transform.position = currentObject.transform.position + new Vector3(rng1, rng2, 0);
+        transform.position = transform.position + new Vector3(rng1, rng2, 0);
     }
 
     private void OnMouseDown()
     {
         if (lvltmp.CanPlay())
         {
-            startDragPosition = currentObject.transform.position;
+            //startDragPosition = currentObject.transform.position;
+            startDragPosition = transform.position;
             isDragging = true;
         }
         else
@@ -33,7 +43,8 @@ public class Milk : MonoBehaviour
     {
         if (!isDragging) return;
 
-        currentObject.transform.position = GetMousePositionInWorldSpace();
+        //currentObject.transform.position = GetMousePositionInWorldSpace();
+        transform.position = GetMousePositionInWorldSpace();
     }
 
     private void OnMouseUp()
@@ -51,12 +62,14 @@ public class Milk : MonoBehaviour
             }
             else
             {
-                currentObject.transform.position = startDragPosition;
+                //currentObject.transform.position = startDragPosition;
+                transform.position = startDragPosition;
             }
         }
         else
         {
-            currentObject.transform.position = startDragPosition;
+            //currentObject.transform.position = startDragPosition;
+            transform.position = startDragPosition;
         }
 
         col.enabled = true;
@@ -65,14 +78,15 @@ public class Milk : MonoBehaviour
 
     public Vector3 GetMousePositionInWorldSpace()
     {
-        float z = Camera.main.WorldToScreenPoint(currentObject.transform.position).z;
+        //float z = Camera.main.WorldToScreenPoint(currentObject.transform.position).z;
+        float z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(
             new Vector3(Input.mousePosition.x, Input.mousePosition.y, z)
         );
     }
 
-    public Vector3 GetStartPosition()
-    {
-        return startDragPosition;
-    }
+    //public Vector3 GetStartPosition()
+    //{
+    //    return startDragPosition;
+    //}
 }

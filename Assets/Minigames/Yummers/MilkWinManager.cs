@@ -7,7 +7,8 @@ public class MilkWinManager : MonoBehaviour
     [SerializeField] LevelTemplate lvltmp;
     public GameObject homelanderVid;
     public GameObject lossVid;
-    public float timer = 6.7f;
+    //public float timer = 6.7f;
+    public bool alreadyOver = false;
 
     private bool didFinish = false;
 
@@ -19,13 +20,20 @@ public class MilkWinManager : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-
-        if (timer < 0)
+        if (lvltmp.timer < 0 && !alreadyOver)
         {
+            alreadyOver = true;
             didFinish = false;
+            lvltmp.FinishMinigame(false);
             lossVid.SetActive(true);
         }
+        //timer -= Time.deltaTime;
+
+        //if (timer < 0)
+        //{
+        //    didFinish = false;
+        //    lossVid.SetActive(true);
+        //}
     }
 
     public void OnMilkDelivered()
@@ -34,6 +42,7 @@ public class MilkWinManager : MonoBehaviour
             return;
 
         didFinish = true;
+        alreadyOver = true;
 
         lvltmp.FinishMinigame(true);
         homelanderVid.SetActive(true);
