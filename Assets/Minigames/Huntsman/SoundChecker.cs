@@ -22,8 +22,10 @@ public class SoundChecker : MonoBehaviour {
     public UnityEvent huntsmanshot;
     public GameObject laserControl;
     public GameObject currentSemibot;
+    public GameObject huntsmanVideo;
     // Start is called before the first frame update
     void Start() {
+        huntsmanVideo.SetActive(false);
         huntsman2.SetActive(false);
         huntsman1.SetActive(true);
         MicrophoneToAudioClip();
@@ -40,8 +42,11 @@ public class SoundChecker : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (lvltmp.timer < 0) {
+        if (lvltmp.timer < 0 && !alreadyOver) {
             alreadyOver = true;
+            huntsman2.SetActive(false);
+            huntsman1.SetActive(false);
+            huntsmanVideo.SetActive(true);
         }
         float audioStrength = soundSensibility * returnAudioStrength(Microphone.GetPosition(Microphone.devices[0]), microphoneAudioClip);
         if (audioStrength > threshold && !alreadyOver) {
