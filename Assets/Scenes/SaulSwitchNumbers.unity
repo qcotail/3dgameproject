@@ -1674,6 +1674,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 340514783}
     - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
+      propertyPath: startText
+      value: Swap those numbers!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096009574341978389, guid: b99741f91fb55c9448909096c53ce941, type: 3}
       propertyPath: sceneTransition
       value: 
       objectReference: {fileID: 1423204089}
